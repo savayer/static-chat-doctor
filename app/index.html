@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script src="/js/script.js"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title class="text" id="site">Международный Клинический центр</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- <section class="startpage">
+        <div class="startpage_bg"></div>
+        <div class="startpage__header">
+            <div class="startpage__header-bg"></div>
+            <h1>Международный
+                <br> Клинический центр</h1>
+        </div>
+        <div class="startpage__info">
+            <p>Примите участие в БЛАГОТВОРИТЕЛЬНОЙ акции.</p>
+            <p>
+                <b>Бесплатная консультация</b> с ведущими специалистами нашей клиники.</p>
+        </div>
+        <button type="button" class="texts btn btn--primary btn--red" id="consult_button">
+            Консультация
+        </button>
+    </section> -->
+    <section class="chat_page">
+        <div class="container" style="background: #fff">
+            <div class="chat_page__content">
+                <header>
+                    <h1>Международный Клинический центр</h1>
+                </header>
+
+                <div class="chat__wrapper">
+                    <div class="chat__body clearfix">
+                        <div class="chat__header">Беседа</div>
+                        <div class="chat__doctors-list col-sm-4 nopadding clearfix">
+                            <div class="chat__doctors-item chat__doctors-hover online col-sm-12 col-xs-4 clearfix" data-doctor="1">
+                                <div class="chat__doctors-avatar col-md-6 col-xs-12">
+                                    <img src="img/doctors/m1.jpg" alt="" >
+                                    <div class="chat__doctors-status">
+                                        <i class="icons online"></i>
+                                        <span class="status">в сети</span>
+                                    </div>
+                                </div>
+                                <div class="chat__doctors-info col-md-6 nopadding col-sm-12">
+                                    <div class="chat__doctors-name hidden-xs">
+                                        <b>Gabriel Porter</b>
+                                        <ul class="doctor_info">
+                                            <li>Доктор медицинский наук</li>
+                                            <li>Диетолог высшей категории</li>
+                                            <li>Стаж работы: 20 лет</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat__doctors-item chat__doctors-disable col-sm-12 col-xs-4">
+                                <div class="chat__doctors-avatar col-md-6 col-xs-12">
+                                    <img src="img/doctors/m2.jpg" alt="">
+                                    <div class="chat__doctors-status">
+                                        <i class="icons offline"></i>
+                                        <span class="status">отошел</span>
+                                    </div>
+                                </div>
+                                <div class="chat__doctors-info">
+                                    <div class="chat__doctors-name hidden-xs">
+                                        <b>Lester Booth</b>
+                                        <ul class="doctor_info">
+                                            <li>Кандидат медицинских наук</li>
+                                            <li>Диетолог высшей категории</li>
+                                            <li>Стаж работы: 14 лет</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat__doctors-item chat__doctors-hover col-sm-12 col-xs-4" data-doctor="2">
+                                <div class="chat__doctors-avatar col-md-6 col-xs-12">
+                                    <img src="img/doctors/w1.jpg" alt="">
+                                    <div class="chat__doctors-status">
+                                        <i class="icons online"></i>
+                                        <span class="status">в сети</span>
+                                    </div>
+                                </div>
+                                <div class="chat__doctors-info">
+                                    <div class="chat__doctors-name hidden-xs">
+                                        <b>Maria Lawrence</b>
+                                        <ul class="doctor_info">
+                                            <li>Доктор медицинский наук</li>
+                                            <li>Диетолог второй категории</li>
+                                            <li>Стаж работы: 16 лет</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="chat__container col-sm-8 nopadding" id="v_chat">
+                            <div class="chat__title">
+                                <div class="chat__title-avatar">
+                                    <img :src="path" alt="">
+                                </div>
+                                <div class="chat__title-info">
+                                    <div class="chat__name"> {{ name }} </div>
+                                    <div class="chat__status">
+                                        <i class="icons online icons--small"></i> в сети
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="chat__inner js-add-msg" style="height: 350px;">
+                                <li v-for="message in dialog" :class="getTypeMes(message.type)">
+                                    <div class="chat__avatar" v-if="message.type === 'doctor'">
+                                        <img :src="message.path" alt="">
+                                    </div>
+                                    <div class="chat__message" v-html="message.text">
+
+                                    </div>
+                                    <div class="chat__time"> {{ message.date }} </div>
+                                </li>
+                            </ul>
+                            <div class="chat__typing">
+                                <span class="typing">
+                                    <span class="texts" id="typing"></span>
+                                    <span class="points"></span>
+                                </span>
+                            </div>
+                            <div class="chat__form">
+                                <div class="chat__form-bg"></div>
+                                <button id="start_chat" class="btn btn-primary btn--chat">Начать чат с {{ name }} </button>
+                                <textarea name="sent__message" placeholder="Введите сообщение" id="sent__message" class="sent__message"></textarea>
+                                <button class="btn btn-primary btn--chat" id="send_message">
+                                    Отправить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <script src="js/vue.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
