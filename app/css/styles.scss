@@ -2,7 +2,7 @@
     position: relative;
     display: inline-block;
     vertical-align: $align;
-}
+} 
 
 @mixin absolute($top, $right, $bottom, $left) {
     position: absolute;
@@ -203,3 +203,5 @@ textarea:focus, textarea:active { outline: none }
         }
     }
 }
+
+.container { height: 100% }

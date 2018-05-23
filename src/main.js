@@ -87,7 +87,7 @@ let v_chat = new Vue ({
     }),
     dialog = {
         timeSend: 3000,
-        typing: () => {
+        typing: function() {
             if (dialogCallCount >= 19) return false;
             let points = '',
                 $points = document.querySelector('.typing span.points'),
@@ -112,7 +112,7 @@ let v_chat = new Vue ({
                 }
                 disableUserChat = false;
                 
-            }, 400) //this.timeSend
+            }, this.timeSend) //this.timeSend
         },
         sendMesFromDoctor: () => {
             dialogCallCount++;

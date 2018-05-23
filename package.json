@@ -2,7 +2,8 @@
     "name": "doctors-consult",
     "version": "1.0.0",
     "scripts": {
-        "build": "babel src -d app/js --presets es2015"
+        "build": "babel src -d app/js --presets es2015",
+        "gulp": "gulp"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",

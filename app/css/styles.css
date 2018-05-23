@@ -358,3 +358,6 @@ textarea:focus, textarea:active {
     max-width: 95%; }
     .startpage .startpage__info p {
       font-size: 22px; } }
+
+.container {
+  height: 100%; }

@@ -114,7 +114,7 @@ var v_chat = new Vue({
                 return false;
             }
             disableUserChat = false;
-        }, 400); //this.timeSend
+        }, this.timeSend); //this.timeSend
     },
     sendMesFromDoctor: function sendMesFromDoctor() {
         dialogCallCount++;
